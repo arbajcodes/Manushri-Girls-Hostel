@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- header-section  -->
+    <header>
+        <div class="logo-title">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+
+            <h1>Mansuri Girl's Hostel</h1>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+        <nav id="navbar">
+            <a href="about.html">About</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" id="openLogin">Student/Parent Login</a>
+        </nav>
+    </header>
+    <!-- hero-section  -->
+    <section class="hero">
+        <h2>safe ,Clean & Afordable</h2>
+        <p>Premium hostel rooms for students with all facilitie</p>
+        <button>Book a Visit</button>
+    </section>
+    <!-- After Hero Section& this break line -->
+    <div class="scroll-line-wrapper animate-line-on-scroll">
+        <div class="scroll-line-labels">
+            <span class="start">Start</span>
+            <span class="end">End</span>
+        </div>
+        <div class="scroll-line-fill">
+            <div class="scroll-dot"></div>
+        </div>
+    </div>
+
+    <!-- Hero Tagline Section -->
+    <section class="tagline-section">
+        <div class="tagline-content">
+            <h1 class="fade-in-on-scroll"><span class="red">LUXURIOUS STUDENT</span><br><span class="blue">LIVING
+                    WITH</span></h1>
+            <h2 class="fade-in-on-scroll delay-1"><span class="orange">9 FLEXIBLE</span> <span class="darkblue">& EASY
+                    INSTALLMENTS</span></h2>
+            <button class="cta-button zoom-in-on-scroll delay-2">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Login Popup Modal -->
+    <div id="loginPopup" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <input type="text" placeholder="Username" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">About Mansuri Girl's Hostel</h2>
+        <p>
+            Mansuri Girl's Hostel is dedicated to providing clean, secure, and affordable accommodation for students.
+            Established in 2018, we have been a trusted second home to over 300+ students, helping them focus on their
+            academic goals
+            while enjoying a peaceful living environment with all modern amenities.
+        </p>
+    </section>
+
+
+    <!-- Room Types Section -->
+    <section id="rooms" class="rooms">
+        <h2 class="section-title">Room Types</h2>
+        <div class="room-list">
+            <div class="room-card room-card1">
+                <img src="https://www.shutterstock.com/image-photo/hostel-dormitory-beds-arranged-room-260nw-696168130.jpg"
+                    alt="Single Room">
+                <div class="content">
+                    <h3>Single Room</h3>
+                    <p>₹25,000 / month</p>
+                    <p>Private room with attached washroom, perfect for focused study and privacy.</p>
+                </div>
+            </div>
+            <div class="room-card room-card2">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/032/712/575/small_2x/simple-and-bright-room-for-two-students-in-a-student-dormitory-ai-generative-photo.jpg"
+                    alt="Double Room">
+                <div class="content">
+                    <h3>Double Sharing</h3>
+                    <p>₹18,000 / month</p>
+                    <p>Comfortable shared room for two with study desks, beds, and storage space.</p>
+                </div>
+            </div>
+            <div class="room-card room-card3">
+                <img src="https://doonpublicschool.in/content/hostel.JPG" alt="Dormitory Room">
+                <div class="content">
+                    <h3>Dormitory</h3>
+                    <p>₹10,000 / month</p>
+                    <p>Affordable large room with bunk beds, ideal for groups or budget-friendly living.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title2">Gallery</h2>
+        <div class="gallery-slider">
+            <div class="gallery-track" id="galleryTrack">
+                <div class="gallery-slide"><img
+                        src="https://plus.unsplash.com/premium_photo-1733306455377-2ef61e873f69?q=80&w=827&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Gallery 1"></div>
+                <div class="gallery-slide"><img
+                        src="https://plus.unsplash.com/premium_photo-1663126637580-ff22a73f9bfc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Gallery 2"></div>
+                <div class="gallery-slide"><img
+                        src="https://images.unsplash.com/photo-1682019654120-82c65ff5e006?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Gallery 3"></div>
+                <div class="gallery-slide"><img
+                        src="https://images.unsplash.com/photo-1625667782817-228e40c66aba?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Gallery 4"></div>
+                <div class="gallery-slide"><img
+                        src="https://images.unsplash.com/photo-1571712707792-82c3cc4243f5?q=80&w=589&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Gallery 5"></div>
+
+            </div>
+
+            <button class="gallery-btn left" onclick="slideGallery(-1)">&#10094;</button>
+            <button class="gallery-btn right" onclick="slideGallery(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" style="text-align:center; padding: 60px 20px;">
+        <h2 class="section-title">Hostel Tour Video</h2>
+        <iframe src="https://www.youtube.com/embed/Lw4bdGfoKHo" title="Sundar One Hostel Tour" allowfullscreen></iframe>
+    </section>
+
+    <!-- review-section  -->
+    <section class="review-section">
+        <h2 class="section-title">What Our Students Say</h2>
+
+        <div class="review-slider">
+            <div class="review-track" id="reviewTrack">
+                <div class="review-card">
+                    <p class="review-text">"Amazing place to stay!"</p>
+                    <p class="review-author">– Simran, NEET Aspirant</p>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"Clean rooms and healthy food."</p>
+                    <p class="review-author">– Danish, B.Sc Student</p>
+                </div>
+            </div>
+
+            <button class="review-btn left" onclick="slideReview(-1)">&#10094;</button>
+            <button class="review-btn right" onclick="slideReview(1)">&#10095;</button>
+        </div>
+
+        <!-- Review Form -->
+        <form class="review-form" onsubmit="handleReviewSubmit(event)">
+            <textarea placeholder="Write your review..." required></textarea>
+            <input type="text" placeholder="Your Name" required />
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <h2 class="section-title">Our Location</h2>
+        <div class="location-wrapper">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1760869518826!2d77.3881!3d28.6283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfc5c4e8ab1cb%3A0xe7b126a7c5c8a504!2sSundar%20One%20Hostel!5e0!3m2!1sen!2sin!4v1687605478691!5m2!1sen!2sin"
+                width="100%" height="450" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="amenities-section">
+        <h2 class="section-title"><span style="color: var(--primary-color);">Amenities</span> at <span
+                style="color: var(--accent-color);">Mansuri Girl's Hostel</span></h2>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1048/1048949.png" alt="Gym Icon">
+                <p>In-House Gym</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Food Icon">
+                <p>Freshly Cooked Meals</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1040/1040251.png" alt="Laundry Icon">
+                <p>Professional Laundry</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2920/2920050.png" alt="Housekeeping Icon">
+                <p>Daily Housekeeping</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/189/189665.png" alt="WiFi Icon">
+                <p>High-Speed WiFi</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="Clean Room Icon">
+                <p>Neat and Clean Rooms</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2972/2972502.png" alt="Security Icon">
+                <p>24x7 Security</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2930/2930036.png" alt="RO Water Icon">
+                <p>R.O Water</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="Game Area Icon">
+                <p>Gaming Area</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3032/3032919.png" alt="Garden Icon">
+                <p>Garden Area</p>
+            </div>
+            <div class="amenity-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/575/575780.png" alt="Swimming Icon">
+                <p>Swimming Pool</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- contact us -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-wrapper">
+            <div class="owner-details">
+                <h3>Hostel Owner</h3>
+                <p><strong>Name:</strong> Manushri Girls Hostel</p>
+                <p><strong>Email:</strong> Manushrigroups@gmail.com</p>
+                <p><strong>Phone:</strong> +91 8302852917 </br> 8306852917</p>
+                <p><strong>Address:</strong>Tejasvi Greens Colony 233 Plot No Near Manipal University Jaipur</p>
+            </div>
+
+            <!-- 👇 Contact Form Starts -->
+            <form class="contact-form" action="https://formsubmit.co/a592687f7e66a69e313afe91eb01c9f7" method="POST">
+                <!-- REQUIRED Hidden Settings -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="thank-you.html">
+
+
+                <input type="text" name="name" required placeholder="Your Name">
+                <input type="email" name="email" required placeholder="Your Email">
+                <input type="tel" name="phone" required placeholder="Your Phone Number">
+                <textarea name="message" rows="5" required placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <!-- 👆 Contact Form Ends -->
+
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Sundar One Hostel. All rights reserved.</p>
+    </footer>
+
+
+    <script src="script .js"></script>
+</body>
+
+</html>
