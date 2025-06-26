@@ -30,7 +30,7 @@ const openLogin = document.getElementById("openLogin");
   const closeBtn = document.querySelector(".close");
 
   openLogin.addEventListener("click", (e) => {
-    e.preventDefault();
+    
     loginPopup.style.display = "block";
   });
 
