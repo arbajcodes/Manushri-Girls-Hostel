@@ -76,7 +76,7 @@ function resetAutoSlide() {
 // review-section //
 
 
-const maxReviews = 5;
+const maxReviews = 10;
 let reviewIndex = 0;
 
 const reviewTrack = document.getElementById("reviewTrack");
@@ -134,16 +134,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //---contact us---//
-document.querySelector('.contact-form').addEventListener('submit', function (e) {
-  
-  const formData = new FormData(this);
-  const name = formData.get('name');
-  const email = formData.get('email');
-  const phone = formData.get('phone');
-  const message = formData.get('message');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const popup = document.getElementById("thankYouPopup");
+  const closeBtn = document.getElementById("popupClose");
 
-  // Simulated action: Replace with actual backend endpoint or service
-  alert('Your message has been sent to the hostel owner!');
-  this.reset();
+  if (!form || !popup || !closeBtn) {
+    console.warn("Form or popup elements not found.");
+    return;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Default behaviour roko
+
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(response => {
+      if (response.ok) {
+        popup.style.display = "flex"; // ✅ popup show karo
+        form.reset(); // ✅ form reset karo
+      } else {
+        alert("❌ Failed to send message. Please try again later.");
+      }
+    })
+    .catch(() => {
+      alert("❌ Network error. Try again later.");
+    });
+  });
+
+  // Close popup when user clicks X or outside
+  closeBtn.addEventListener("click", () => popup.style.display = "none");
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) popup.style.display = "none";
+  });
 });
 
