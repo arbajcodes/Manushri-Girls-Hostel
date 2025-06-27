@@ -260,29 +260,41 @@
             </div>
 
             <!-- 👇 Contact Form Starts -->
-            <form class="contact-form" action="https://formsubmit.co/khanarbaj24474@gmail.com" method="POST">
-                <!-- REQUIRED Hidden Settings -->
+            <form id="contactForm" action="https://formsubmit.co/khanarbaj24474@gmail.com" method="POST">
+                <!-- Hidden Settings -->
                 <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://arbajcodes.github.io/Manushri-Girls-Hostel/thank-you.html">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Message from Hostel Website">
 
+                <!-- Form Fields -->
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
 
-                <input type="text" name="name" required placeholder="Your Name">
-                <input type="email" name="email" required placeholder="Your Email">
-                <input type="tel" name="phone" required placeholder="Your Phone Number">
-                <textarea name="message" rows="5" required placeholder="Your Message"></textarea>
                 <button type="submit">Send Message</button>
             </form>
+
+            <!-- ✅ Thank You Popup -->
+            <div id="thankYouPopup" class="popup-overlay">
+                <div class="popup-box">
+                    <span class="close-btn" id="popupClose">&times;</span>
+                    <h2>Thank you!</h2>
+                    <p>Your message was sent successfully.</p>
+                </div>
+            </div>
+
             <!-- 👆 Contact Form Ends -->
 
         </div>
     </section>
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 Sundar One Hostel. All rights reserved.</p>
+        <p>&copy; 2025 Manushri Girls Hostel Creater is Asan by Arbajcodes . All rights reserved.</p>
     </footer>
 
 
-    <script src="script .js"></script>
+    <script src="script .js" defer></script>
 </body>
 
 </html>
