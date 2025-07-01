@@ -171,3 +171,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+//--AOS-for-page-scrolling-animation---//
+   document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        duration: 1000,
+        // once: true
+      });
+    });
