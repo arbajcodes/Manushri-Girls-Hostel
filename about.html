@@ -4,13 +4,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Mansuri Girl's Hostel</title>
+  <title>About Us - Manushri Girls Hostel</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #f9fafb;
+    }
+
+    .hero {
+      background: url('your-hostel-image.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    .about-content,
+    .why-choose,
+    .features,
+    .gallery-preview,
+    .cta-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .about-content h2,
+    .why-choose h2,
+    .gallery-preview h2 {
+      text-align: center;
+      color: #1e3a8a;
+      margin-bottom: 30px;
+    }
+
+    .about-content p {
+      font-size: 17px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1 1 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-card h3 {
+      margin: 10px 0 5px;
+    }
+
+    /* --- NEW Why Choose Cards --- */
+    .why-choose-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .why-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1 1 250px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 130px;
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .why-card p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .center-card {
+      align-items: center;
+    }
+
+    .kitchen-card {
+      background-color: #fefce8;
+      /* light yellow background */
+      border: 1px solid #facc15;
+      /* yellow border */
+    }
+
+
+    /* Gallery */
+    .gallery-preview img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+    /* Visit Button */
+    .cta-section {
+      text-align: center;
+    }
+
+    .visit-button {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .visit-button:hover {
+      background-color: #1ebe5d;
+    }
+  </style>
 </head>
 
 <body>
-
   <header>
+    <!-- header-section -->
     <div class="logo-title">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Logo">
@@ -21,6 +167,7 @@
 
     <button class="menu-toggle" id="menuToggle">&#9776;</button>
     <nav>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="rooms.html">Rooms</a>
       <a href="gallery.html">Gallery</a>
@@ -29,10 +176,106 @@
     </nav>
   </header>
 
-  <main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Manushri Girls Hostel</h1>
+    <p>Comfort. Safety. Community.</p>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-content">
     <h2>About Us</h2>
-    <p>This is the about us page content...</p>
-  </main>
+    <p>Manushri Girls Hostel was established in 2023 to provide a safe, comfortable, and friendly living environment for
+      female students. Operated by a team of dedicated caretakers and administrators, our hostel offers top-notch
+      amenities and a true feeling of home.</p>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-card" data-aos="fade-up">
+      <h3>✅ Safe & Secure</h3>
+      <p>24/7 CCTV, security guard & biometric access</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+      <h3>✅ Affordable</h3>
+      <p>Budget-friendly rates with flexible plans</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+      <h3>✅ Prime Location</h3>
+      <p>Located near major colleges & transport hubs</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+      <h3>✅ Home-Like Meals</h3>
+      <p>Nutritious food prepared hygienically</p>
+    </div>
+  </section>
+
+  <!-- why-choose-section  -->
+  <section class="why-choose">
+    <h2>Why Choose Us?</h2>
+    <div class="why-choose-cards">
+      <div class="why-card" data-aos="zoom-in">
+        <p>Spacious & well-ventilated rooms</p>
+      </div>
+      <div class="why-card" data-aos="zoom-in" data-aos-delay="100">
+        <p>Friendly and supportive environment</p>
+      </div>
+      <div class="why-card" data-aos="zoom-in" data-aos-delay="200">
+        <p>Daily cleaning & maintenance</p>
+      </div>
+      <div class="why-card" data-aos="zoom-in" data-aos-delay="300">
+        <p>WiFi, laundry, and study area available</p>
+      </div>
+      <div class="why-card center-card" data-aos="zoom-in" data-aos-delay="400">
+        <p>Emergency support & medical assistance</p>
+      </div>
+      <!-- Kitchen Card -->
+      <div class="why-card kitchen-card" data-aos="zoom-in" data-aos-delay="500">
+        <p>🧑‍🍳 Fully equipped kitchen available for light cooking.<br>
+          Includes induction, fridge, utensils, RO water.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Gallery -->
+  <section class="gallery-preview">
+    <h2>Gallery Preview</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1724061885068-f10ceeb9f84c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Room Photo" data-aos="fade-up">
+      <img
+        src="https://images.unsplash.com/photo-1638828229405-8db92ff35af6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Common Area" data-aos="fade-up" data-aos-delay="100">
+      <img
+        src="https://images.unsplash.com/photo-1672477179695-7276b0602fa9?q=80&w=726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Meals" data-aos="fade-up" data-aos-delay="200">
+    </div>
+  </section>
+
+  <!-- Call To Action -->
+  <section class="cta-section" data-aos="fade-up">
+    <a href="https://wa.me/919587120014?text=Hi%20I%20would%20like%20to%20schedule%20a%20visit%20to%20Manushri%20Girls%20Hostel."
+      target="_blank" class="visit-button">
+      Schedule a Visit
+    </a>
+  </section>
+
+  <!--JS-Section -->
+
+  <!-- AOS CSS (already added in <head>) -->
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({
+        duration: 1000,
+        // once: true
+      });
+    });
+  </script>
+
 </body>
 
 </html>
