@@ -4,23 +4,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rooms - Mansuri Girl's Hostel</title>
+  <title>Rooms - Manushri Girls Hostel</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000b10;
+      color: white;
+    }
+
+    .hero {
+      background-color: #1e3a8a;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      width: 320px;
+      height: 440px;
+      background: #111827;
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 16px;
+    }
+
+    .card h3 {
+      color: #0ff;
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+      text-align: left;
+      font-size: 14px;
+      list-style: disc;
+    }
+
+    .card ul li {
+      margin-bottom: 6px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .cta-section a {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
 </head>
 
 <body>
-
   <header>
     <div class="logo-title">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Logo">
       </a>
-
-      <h1>Mansuri Girl's Hostel</h1>
+      <h1>Manushri Girls Hostel</h1>
     </div>
-
     <button class="menu-toggle" id="menuToggle">&#9776;</button>
     <nav>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="rooms.html">Rooms</a>
       <a href="gallery.html">Gallery</a>
@@ -29,10 +123,55 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Rooms</h2>
-    <p>This is the rooms page content...</p>
-  </main>
+  <section class="hero">
+    <h1>Our Rooms</h1>
+    <p>Comfortable, clean, and secure accommodation for every student</p>
+  </section>
+
+  <div class="carousel-wrapper">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/6601780/pexels-photo-6601780.jpeg" alt="Triple Sharing Room">
+      <div class="content">
+        <h3>Triple Sharing</h3>
+        <ul>
+          <li>3 Beds with storage</li>
+          <li>3 Study tables</li>
+          <li>Attached Bathroom</li>
+        </ul>
+        <a href="https://wa.me/919587120014?text=Interested%20in%20Triple%20Sharing%20Room" class="btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/5793919/pexels-photo-5793919.jpeg" alt="Double Sharing Room">
+      <div class="content">
+        <h3>Double Sharing</h3>
+        <ul>
+          <li>2 Beds with table</li>
+          <li>Wardrobe and study area</li>
+          <li>Shared Bathroom</li>
+        </ul>
+        <a href="https://wa.me/919587120014?text=Interested%20in%20Double%20Sharing%20Room" class="btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/5999352/pexels-photo-5999352.jpeg" alt="Single Room">
+      <div class="content">
+        <h3>Single Room</h3>
+        <ul>
+          <li>Private room</li>
+          <li>Personal table</li>
+          <li>Attached Bathroom</li>
+        </ul>
+        <a href="https://wa.me/919587120014?text=Interested%20in%20Single%20Room" class="btn">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="cta-section">
+    <a href="https://wa.me/919587120014?text=I%20would%20like%20to%20book%20a%20visit">Schedule a Visit on WhatsApp</a>
+  </section>
 </body>
 
 </html>
