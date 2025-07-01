@@ -95,12 +95,12 @@
  }
 
  .hero h2 {
-   font-size: 24px;
+   font-size: 30px;
    margin-bottom: 10px;
  }
 
  .hero p {
-   font-size: 18px;
+   font-size: 20px;
    margin-bottom: 20px;
  }
 
@@ -110,7 +110,7 @@
    border: none;
    padding: 10px 20px;
    border-radius: 5px;
-   font-size: 14px;
+   font-size: 15px;
    cursor: pointer;
    transition: background 0.3s;
  }
@@ -398,6 +398,10 @@
    border-radius: 8px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
    overflow: hidden;
+   transition: transform 0.3s ease ;
+ }
+ .room-card:hover{
+  transform: scale(1.05);
  }
 
  .room-card img {
