@@ -130,27 +130,43 @@
     }
 
     /* Visit Button */
-    .cta-section {
-      text-align: center;
-    }
+   .schedule-visit-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
 
-    .visit-button {
-      display: inline-block;
-      background-color: #25D366;
-      color: white;
-      padding: 14px 24px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-      margin-top: 20px;
-    }
+.visit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: white;
+  padding: 14px 26px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-    .visit-button:hover {
-      background-color: #1ebe5d;
-    }
+.visit-button:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05);
+}
+
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.reply-note {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+}
+
   </style>
 </head>
 
@@ -255,12 +271,16 @@
   </section>
 
   <!-- Call To Action -->
-  <section class="cta-section" data-aos="fade-up">
-    <a href="https://wa.me/919587120014?text=Hi%20I%20would%20like%20to%20schedule%20a%20visit%20to%20Manushri%20Girls%20Hostel."
-      target="_blank" class="visit-button">
-      Schedule a Visit
-    </a>
-  </section>
+<div class="schedule-visit-wrapper">
+  <a href="https://wa.me/919587120014?text=Hi%20I%20would%20like%20to%20schedule%20a%20visit%20to%20Manushri%20Girls%20Hostel."
+     target="_blank"
+     class="visit-button">
+    <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon" />
+    Schedule a Visit
+  </a>
+  <p class="reply-note">We reply within 2 hours</p>
+</div>
+
 
   <!--JS-Section -->
 
