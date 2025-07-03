@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Booking List Page Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f9ff;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        #bookingList>div {
+            background-color: #ffffff;
+            border-left: 5px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #bookingList h4 {
+            margin: 0 0 10px;
+            color: #1e3a8a;
+        }
+
+        #bookingList p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        #bookingList small {
+            color: #888;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>All Booking Submissions</h2>
+    <div id="bookingList"></div>
+
+    <script>
+        const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+        const container = document.getElementById("bookingList");
+        if (bookings.length === 0) {
+            container.innerHTML = "<p>No bookings yet.</p>";
+        } else {
+            bookings.forEach((booking, index) => {
+                container.innerHTML += `
+        <div style="border:1px solid #ccc; padding:10px; margin-bottom:20px;">
+          <h4>Booking #${index + 1}</h4>
+          <p><strong>Name:</strong> ${booking.name}</p>
+          <p><strong>Phone:</strong> ${booking.phone}</p>
+          <p><strong>Date:</strong> ${booking.date}</p>
+          <p><strong>Room:</strong> ${booking.roomType}</p>
+          <p><strong>Message:</strong> ${booking.message}</p>
+          <small><strong>Submitted:</strong> ${booking.time}</small>
+        </div>
+      `;
+            });
+        }
+    </script>
+
+</body>
+
+</html>
