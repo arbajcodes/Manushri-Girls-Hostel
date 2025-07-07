@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hostel Booking-list</title>
-</head> 
+</head>
+
 <body onload="checkAccess()">
   <h2>Booking List</h2>
   <div id="bookingList"></div>
@@ -26,18 +28,23 @@
       } else {
         bookings.forEach((b, i) => {
           listDiv.innerHTML += `
-            <div style="border:1px solid #ccc; margin:10px; padding:10px;">
-              <h4>Booking ${i + 1}</h4>
-              <p><strong>Name:</strong> ${b.name}</p>
-              <p><strong>Email:</strong> ${b.email}</p>
-              <p><strong>Phone:</strong> ${b.phone}</p>
-              <p><strong>Message:</strong> ${b.message}</p>
-              <p><strong>Submitted:</strong> ${b.time}</p>
-            </div>
-          `;
+    <div style="border:1px solid #ccc; margin:10px; padding:10px;">
+      <h4>Booking ${i + 1}</h4>
+      <p><strong>Name:</strong> ${b.name}</p>
+      <p><strong>Email:</strong> ${b.email}</p>
+      <p><strong>Phone:</strong> ${b.phone}</p>
+      <p><strong>Seats:</strong> ${b.seats}</p>
+      <p><strong>Date:</strong> ${b.date}</p>
+      <p><strong>Room Type:</strong> ${b.roomType}</p>
+      <p><strong>Message:</strong> ${b.message}</p>
+      <p><strong>Submitted:</strong> ${b.time}</p>
+    </div>
+  `;
         });
+
       }
     }
   </script>
 </body>
+
 </html>
