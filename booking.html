@@ -180,44 +180,56 @@
   <!--   
 < ✅ Booking Form -->
   <form id="bookingForm">
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <input type="tel" name="phone" placeholder="Phone Number" required />
-  <textarea name="message" placeholder="Message" required></textarea>
-  <button type="submit">Submit</button>
-</form>
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="tel" name="phone" placeholder="Phone Number" required />
 
-<script>
-  document.getElementById("bookingForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+    <input type="number" name="seats" placeholder="Number of Seats" min="1" required />
+    <input type="date" name="date" required />
 
-    const form = e.target;
+    <select name="roomType" required>
+      <option value="">Select Room Type</option>
+      <option value="Single">Single Room</option>
+      <option value="Shared">Shared Room</option>
+    </select>
 
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      message: form.message.value,
-      time: new Date().toLocaleString()
-    };
+    <textarea name="message" placeholder="Message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
 
-    // ✅ Save data to localStorage
-    let bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
-    bookings.push(data);
-    localStorage.setItem("bookings", JSON.stringify(bookings));
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    // ✅ Send only page URL to owner's email
-    fetch("https://script.google.com/macros/s/AKfycbxruBLMGKx5OIA5tSz4Q1PtPaDCet3G0EX4eL9pzc0J0rRUjTQQlZPwU8cTu-tJNcVE/exec", {
-      method: "POST",
-      body: new URLSearchParams({
-        page: window.location.origin + "/booking-list.html"
-      })
+      const form = e.target;
+
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        seats: form.seats.value,
+        date: form.date.value,
+        roomType: form.roomType.value,
+        message: form.message.value,
+        time: new Date().toLocaleString()
+      };
+
+      let bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+      bookings.push(data);
+      localStorage.setItem("bookings", JSON.stringify(bookings));
+
+      fetch("https://script.google.com/macros/s/AKfycbxruBLMGKx5OIA5tSz4Q1PtPaDCet3G0EX4eL9pzc0J0rRUjTQQlZPwU8cTu-tJNcVE/exec", {
+        method: "POST",
+        body: new URLSearchParams({
+          page: "https://arbajcodes.github.io/hostel-website/booking-list.html"
+        })
+      });
+
+      alert("Thank you! We will contact you soon.");
+      form.reset();
     });
+  </script>
 
-    alert("Thank you! We will contact you soon.");
-    form.reset();
-  });
-</script>
 
 </body>
 
