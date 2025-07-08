@@ -11,29 +11,29 @@
   <h2>Booking List</h2>
   <div id="bookingList">Loading...</div>
 
-  <script>
-    async function checkAccess() {
-      const access = prompt("Enter owner password:");
-      if (access !== "manushri123") {
-        alert("Access Denied");
-        window.location.href = "index.html";
-        return;
-      }
+ <script>
+  async function checkAccess() {
+    const access = prompt("Enter owner password:");
+    if (access !== "manushri123") {
+      alert("Access Denied");
+      window.location.href = "index.html";
+      return;
+    }
 
-      const listDiv = document.getElementById("bookingList");
+    const listDiv = document.getElementById("bookingList");
 
-      try {
-        const res = await fetch("https://script.google.com/macros/s/AKfycbwaFbIA5DLfgbI3b5oFLqsz-Z-p4tQ-MfJzzJL_OCoOdxng7MmMF76Vv-V4rHxXrTd7/exec");
-        const bookings = await res.json();
+    try {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbwaFbIA5DLfgbI3b5oFLqsz-Z-p4tQ-MfJzzJL_OCoOdxng7MmMF76Vv-V4rHxXrTd7/exec");
+      const bookings = await res.json();
 
-        if (bookings.length === 0) {
-          listDiv.innerHTML = "<p>No bookings found.</p>";
-        } else {
-          listDiv.innerHTML = ""; // ✅ This line is IMPORTANT
+      if (bookings.length === 0) {
+        listDiv.innerHTML = "<p>No bookings found.</p>";
+      } else {
+        listDiv.innerHTML = ""; // ✅ clear previous content
 
-          bookings.forEach((b, i) => {
-            listDiv.innerHTML += `
-            <div style="border:1px solid #ccc; margin:10px; padding:10px;">
+        bookings.forEach((b, i) => {
+          listDiv.innerHTML += `
+            <div style="border:1px solid #ccc; margin:10px; padding:10px;" id="booking-${i}">
               <h4>Booking ${i + 1}</h4>
               <p><strong>Name:</strong> ${b.name}</p>
               <p><strong>Email:</strong> ${b.email}</p>
@@ -43,15 +43,38 @@
               <p><strong>Room Type:</strong> ${b.roomType}</p>
               <p><strong>Message:</strong> ${b.message}</p>
               <p><strong>Submitted:</strong> ${new Date(b.time).toLocaleString()}</p>
+              <button onclick="deleteBooking(${i})" style="margin-top:10px; background:red; color:white; padding:5px 10px; border:none; border-radius:5px; cursor:pointer;">🗑️ Delete</button>
             </div>`;
-          });
-        }
-      } catch (err) {
-        listDiv.innerHTML = "<p>Error loading data.</p>";
-        console.error(err);
+        });
       }
+    } catch (err) {
+      listDiv.innerHTML = "<p>Error loading data.</p>";
+      console.error(err);
     }
-  </script>
+  }
+
+  async function deleteBooking(index) {
+    const confirmDelete = confirm("Are you sure you want to delete this booking?");
+    if (!confirmDelete) return;
+
+    try {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbwaFbIA5DLfgbI3b5oFLqsz-Z-p4tQ-MfJzzJL_OCoOdxng7MmMF76Vv-V4rHxXrTd7/exec", {
+        method: "POST",
+        body: new URLSearchParams({
+          action: "delete",
+          row: index + 2 // +2 because row 1 is heading, and index starts at 0
+        })
+      });
+
+      const result = await res.text();
+      alert(result);
+      document.getElementById(`booking-${index}`).remove();
+    } catch (err) {
+      alert("Failed to delete booking");
+      console.error(err);
+    }
+  }
+</script>
 
 
 </body>
