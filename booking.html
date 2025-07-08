@@ -196,31 +196,40 @@
     <textarea name="message" placeholder="Message" required></textarea>
     <button type="submit">Submit</button>
   </form>
+<script>
+  document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  <script>
-    document.getElementById("bookingForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+    const form = e.target;
 
-      const form = e.target;
+    const formData = new URLSearchParams({
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      seats: form.seats.value,
+      date: form.date.value,
+      roomType: form.roomType.value,
+      message: form.message.value,
+      page: "https://arbajcodes.github.io/Manushri-Girls-Hostel/booking-list.html"
+    });
 
-      fetch("https://script.google.com/macros/s/AKfycbwaFbIA5DLfgbI3b5oFLqsz-Z-p4tQ-MfJzzJL_OCoOdxng7MmMF76Vv-V4rHxXrTd7/exec", {
+    try {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbwaFbIA5DLfgbI3b5oFLqsz-Z-p4tQ-MfJzzJL_OCoOdxng7MmMF76Vv-V4rHxXrTd7/exec", {
         method: "POST",
-        body: new URLSearchParams({
-          name: form.name.value,
-          email: form.email.value,
-          phone: form.phone.value,
-          seats: form.seats.value,
-          date: form.date.value,
-          roomType: form.roomType.value,
-          message: form.message.value,
-          page: "https://arbajcodes.github.io/Manushri-Girls-Hostel/booking-list.html"
-        })
+        body: formData
       });
+
+      const result = await res.text();
+      console.log("Response from Google Script:", result);
 
       alert("Thank you! We will contact you soon.");
       form.reset();
-    });
-  </script>
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error! Please try again.");
+    }
+  });
+</script>
 
 
 </body>
