@@ -203,26 +203,17 @@
 
       const form = e.target;
 
-      const data = {
-        name: form.name.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        seats: form.seats.value,
-        date: form.date.value,
-        roomType: form.roomType.value,
-        message: form.message.value,
-        time: new Date().toLocaleString()
-      };
-
-      let bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
-      bookings.push(data);
-      localStorage.setItem("bookings", JSON.stringify(bookings));
-
-      fetch("https://script.google.com/macros/s/AKfycbxruBLMGKx5OIA5tSz4Q1PtPaDCet3G0EX4eL9pzc0J0rRUjTQQlZPwU8cTu-tJNcVE/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbwaFbIA5DLfgbI3b5oFLqsz-Z-p4tQ-MfJzzJL_OCoOdxng7MmMF76Vv-V4rHxXrTd7/exec", {
         method: "POST",
         body: new URLSearchParams({
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          seats: form.seats.value,
+          date: form.date.value,
+          roomType: form.roomType.value,
+          message: form.message.value,
           page: "https://arbajcodes.github.io/Manushri-Girls-Hostel/booking-list.html"
-         
         })
       });
 
