@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hostel Booking-list</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hostel Booking List</title>
 </head>
 
 <body onload="checkAccess()">
   <h2>Booking List</h2>
-  <div id="bookingList"></div>
+  <div id="bookingList">Loading...</div>
 
   <script>
-    function checkAccess() {
+    async function checkAccess() {
       const access = prompt("Enter owner password:");
       if (access !== "manushri123") {
         alert("Access Denied");
@@ -20,31 +20,40 @@
         return;
       }
 
-      const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
       const listDiv = document.getElementById("bookingList");
 
-      if (bookings.length === 0) {
-        listDiv.innerHTML = "<p>No bookings found.</p>";
-      } else {
-        bookings.forEach((b, i) => {
-          listDiv.innerHTML += `
-    <div style="border:1px solid #ccc; margin:10px; padding:10px;">
-      <h4>Booking ${i + 1}</h4>
-      <p><strong>Name:</strong> ${b.name}</p>
-      <p><strong>Email:</strong> ${b.email}</p>
-      <p><strong>Phone:</strong> ${b.phone}</p>
-      <p><strong>Seats:</strong> ${b.seats}</p>
-      <p><strong>Date:</strong> ${b.date}</p>
-      <p><strong>Room Type:</strong> ${b.roomType}</p>
-      <p><strong>Message:</strong> ${b.message}</p>
-      <p><strong>Submitted:</strong> ${b.time}</p>
-    </div>
-  `;
-        });
+      try {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbwaFbIA5DLfgbI3b5oFLqsz-Z-p4tQ-MfJzzJL_OCoOdxng7MmMF76Vv-V4rHxXrTd7/exec");
+        const bookings = await res.json();
 
+        if (bookings.length === 0) {
+          listDiv.innerHTML = "<p>No bookings found.</p>";
+        } else {
+          listDiv.innerHTML = ""; // ✅ This line is IMPORTANT
+
+          bookings.forEach((b, i) => {
+            listDiv.innerHTML += `
+            <div style="border:1px solid #ccc; margin:10px; padding:10px;">
+              <h4>Booking ${i + 1}</h4>
+              <p><strong>Name:</strong> ${b.name}</p>
+              <p><strong>Email:</strong> ${b.email}</p>
+              <p><strong>Phone:</strong> ${b.phone}</p>
+              <p><strong>Seats:</strong> ${b.seats}</p>
+              <p><strong>Date:</strong> ${new Date(b.date).toLocaleDateString()}</p>
+              <p><strong>Room Type:</strong> ${b.roomType}</p>
+              <p><strong>Message:</strong> ${b.message}</p>
+              <p><strong>Submitted:</strong> ${new Date(b.time).toLocaleString()}</p>
+            </div>`;
+          });
+        }
+      } catch (err) {
+        listDiv.innerHTML = "<p>Error loading data.</p>";
+        console.error(err);
       }
     }
   </script>
+
+
 </body>
 
 </html>
