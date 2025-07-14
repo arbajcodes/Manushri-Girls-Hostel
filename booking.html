@@ -196,25 +196,67 @@
     <textarea name="message" placeholder="Message" required></textarea>
     <button type="submit">Submit</button>
   </form>
+  <div id="errorMsg" style="color: red; font-weight: bold;"></div>
 <script>
   document.getElementById("bookingForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const form = e.target;
 
+    const id = Date.now().toString();
+    console.log("Generated ID:", id);
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+    const seats = form.seats.value.trim();
+    const date = form.date.value;
+    const roomType = form.roomType.value;
+    const message = form.message.value.trim();
+
+    // Clear previous error
+    let errorMsg = document.getElementById("errorMsg");
+    if (!errorMsg) {
+      errorMsg = document.createElement("div");
+      errorMsg.id = "errorMsg";
+      errorMsg.style.color = "red";
+      errorMsg.style.fontWeight = "bold";
+      form.prepend(errorMsg);
+    }
+    errorMsg.textContent = "";
+
+    // ✅ Validation
+    if (!name || !email || !phone || !seats || !date || !roomType) {
+      errorMsg.textContent = "⚠️ Please fill in all the fields.";
+      return;
+    }
+
+    if (!email.includes("@") || (!email.endsWith(".com") && !email.endsWith(".in"))) {
+      errorMsg.textContent = "⚠️ Invalid email. Must include '@' and end with '.com' or '.in'";
+      return;
+    }
+
+    if (phone.length !== 10 || isNaN(phone)) {
+      errorMsg.textContent = "⚠️ Please enter a valid 10-digit phone number.";
+      return;
+    }
+
+  
+
+    // ✅ FormData ready to send (with ID)
     const formData = new URLSearchParams({
-      name: form.name.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      seats: form.seats.value,
-      date: form.date.value,
-      roomType: form.roomType.value,
-      message: form.message.value,
+      id, // 👈 Send unique ID to Google Sheet
+      name,
+      email,
+      phone,
+      seats,
+      date,
+      roomType,
+      message,
       page: "https://arbajcodes.github.io/Manushri-Girls-Hostel/booking-list.html"
     });
 
     try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbwaFbIA5DLfgbI3b5oFLqsz-Z-p4tQ-MfJzzJL_OCoOdxng7MmMF76Vv-V4rHxXrTd7/exec", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbwKUashpRRiCZYsNkVaMbra6VOyRSNvHbMpKG7zL4WkrfosbvZ7py5lrBYF_Y4dnfdA/exec", {
         method: "POST",
         body: formData
       });
@@ -222,15 +264,15 @@
       const result = await res.text();
       console.log("Response from Google Script:", result);
 
-      alert("Thank you! We will contact you soon.");
+      alert("✅ Thank you! We will contact you soon.");
       form.reset();
+      errorMsg.textContent = ""; // clear error
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Error! Please try again.");
+      alert("❌ Error! Please try again later.");
     }
   });
 </script>
-
 
 </body>
 
