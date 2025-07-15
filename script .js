@@ -24,25 +24,7 @@ document.querySelectorAll('.fade-in-on-scroll, .zoom-in-on-scroll, .animate-line
   .forEach(el => observer.observe(el));
 
 
-//--loginform--//
-const openLogin = document.getElementById("openLogin");
-  const loginPopup = document.getElementById("loginPopup");
-  const closeBtn = document.querySelector(".close");
 
-  openLogin.addEventListener("click", (e) => {
-    
-    loginPopup.style.display = "block";
-  });
-
-  closeBtn.addEventListener("click", () => {
-    loginPopup.style.display = "none";
-  });
-
-  window.addEventListener("click", (e) => {
-    if (e.target === loginPopup) {
-      loginPopup.style.display = "none";
-    }
-  });
 //--gallery-slider--//
 let index = 0;
 const track = document.getElementById('galleryTrack');
@@ -171,10 +153,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//--AOS-for-page-scrolling-animation---//
-   document.addEventListener('DOMContentLoaded', function () {
-      AOS.init({
-        duration: 1000,
-        // once: true
-      });
-    });
