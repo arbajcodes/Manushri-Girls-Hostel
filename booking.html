@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hostel Booking - Manushri Girls Hostel</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== Hero Section ===== */
     .booking-hero {
       background: linear-gradient(rgba(30, 58, 138, 0.5), rgba(30, 58, 138, 0.5)),
         url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center/cover;
@@ -29,7 +36,7 @@
       opacity: 0.9;
     }
 
-    /* <!-- room-rent-section  --> */
+    /* ===== Room Rent Section ===== */
     .room-rent-section {
       background-color: #fefefe;
       padding: 60px 20px;
@@ -67,7 +74,7 @@
     .facility-card:hover {
       transform: translateY(-5px);
       background-color: #1e868a;
-
+      color: white;
     }
 
     .facility-card h3 {
@@ -81,31 +88,28 @@
       color: #334155;
     }
 
-    /* <!-- booking-form  --> */
-    /* Booking Form Styles */
+    /* ===== Booking Form ===== */
     #bookingForm {
       max-width: 500px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 60px auto;
+      padding: 30px;
       border: 2px solid #1e3a8a;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #f9f9f9;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      font-family: 'Poppins', sans-serif;
+      gap: 16px;
     }
 
     #bookingForm input,
     #bookingForm select,
     #bookingForm textarea {
-      padding: 12px 15px;
+      padding: 12px 14px;
       font-size: 16px;
       border-radius: 6px;
       border: 1px solid #ccc;
       outline: none;
-      transition: border-color 0.3s;
     }
 
     #bookingForm input:focus,
@@ -128,152 +132,157 @@
     #bookingForm button:hover {
       background-color: #0284c7;
     }
+
+    #errorMsg {
+      color: red;
+      font-weight: bold;
+      margin-top: -10px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .booking-hero h1 {
+        font-size: 32px;
+      }
+
+      .booking-hero p {
+        font-size: 16px;
+      }
+
+      .facility-card {
+        width: 100%;
+      }
+    }
   </style>
 </head>
-
 <body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-title">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+      <h1>Manushri Girl's Hostel</h1>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">&#9776;</button>
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="booking.html">Booking</a>
+      <a href="Ruls&FaQ.html">Rules</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
   <section class="booking-hero">
     <div class="booking-hero-content">
       <h1>Enquire or Book Your Stay</h1>
       <p>Reach out to us to reserve your spot at Manushri Girls Hostel</p>
     </div>
   </section>
-  <!-- room-rent-section  -->
+
+  <!-- Room Rent Section -->
   <section class="room-rent-section">
     <h2>Room Rent & Facilities</h2>
     <p>We offer affordable and comfortable accommodation for students:</p>
 
     <div class="facility-cards">
-      <div class="facility-card">
-        <h3>🛏️ Single Room</h3>
-        <p>₹6,000 / Month<br>AC & Non-AC Options</p>
-      </div>
-
-      <div class="facility-card">
-        <h3>🛌 Shared Room (2-Seater)</h3>
-        <p>₹4,500 / Month<br>Peaceful & Secure</p>
-      </div>
-
-      <div class="facility-card">
-        <h3>🍽️ Home-Like Meals</h3>
-        <p>3 healthy meals served daily</p>
-      </div>
-
-      <div class="facility-card">
-        <h3>🧼 Laundry & Cleaning</h3>
-        <p>Twice-a-week laundry service</p>
-      </div>
-
-      <div class="facility-card">
-        <h3>🔐 24/7 Security</h3>
-        <p>CCTV Surveillance & Warden</p>
-      </div>
-
-      <div class="facility-card">
-        <h3>📶 Free Wi-Fi</h3>
-        <p>High-speed internet access</p>
-      </div>
+      <div class="facility-card"><h3>🛏️ Single Room</h3><p>₹6,000 / Month<br>AC & Non-AC Options</p></div>
+      <div class="facility-card"><h3>🛌 Shared Room</h3><p>₹4,500 / Month<br>Peaceful & Secure</p></div>
+      <div class="facility-card"><h3>🍽️ Home-Like Meals</h3><p>3 healthy meals served daily</p></div>
+      <div class="facility-card"><h3>🧼 Laundry & Cleaning</h3><p>Twice-a-week laundry service</p></div>
+      <div class="facility-card"><h3>🔐 24/7 Security</h3><p>CCTV Surveillance & Warden</p></div>
+      <div class="facility-card"><h3>📶 Free Wi-Fi</h3><p>High-speed internet access</p></div>
     </div>
   </section>
 
-
-  <!--   
-< ✅ Booking Form -->
+  <!-- Booking Form -->
   <form id="bookingForm">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
     <input type="tel" name="phone" placeholder="Phone Number" required />
-
     <input type="number" name="seats" placeholder="Number of Seats" min="1" required />
     <input type="date" name="date" required />
-
     <select name="roomType" required>
       <option value="">Select Room Type</option>
       <option value="Single">Single Room</option>
       <option value="Shared">Shared Room</option>
     </select>
-
     <textarea name="message" placeholder="Message" required></textarea>
     <button type="submit">Submit</button>
+    <div id="errorMsg"></div>
   </form>
-  <div id="errorMsg" style="color: red; font-weight: bold;"></div>
-<script>
-  document.getElementById("bookingForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
 
-    const form = e.target;
+  <!-- JS for Nav Toggle & Form Submission -->
+  <script>
+    // Header Nav Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+    menuToggle.addEventListener('click', () => navbar.classList.toggle('open'));
 
-    const id = Date.now().toString();
-    console.log("Generated ID:", id);
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const phone = form.phone.value.trim();
-    const seats = form.seats.value.trim();
-    const date = form.date.value;
-    const roomType = form.roomType.value;
-    const message = form.message.value.trim();
+    // Booking Form Submission
+    document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
 
-    // Clear previous error
-    let errorMsg = document.getElementById("errorMsg");
-    if (!errorMsg) {
-      errorMsg = document.createElement("div");
-      errorMsg.id = "errorMsg";
-      errorMsg.style.color = "red";
-      errorMsg.style.fontWeight = "bold";
-      form.prepend(errorMsg);
-    }
-    errorMsg.textContent = "";
+      const id = Date.now().toString();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const seats = form.seats.value.trim();
+      const date = form.date.value;
+      const roomType = form.roomType.value;
+      const message = form.message.value.trim();
 
-    // ✅ Validation
-    if (!name || !email || !phone || !seats || !date || !roomType) {
-      errorMsg.textContent = "⚠️ Please fill in all the fields.";
-      return;
-    }
+      const errorMsg = document.getElementById("errorMsg");
+      errorMsg.textContent = "";
 
-    if (!email.includes("@") || (!email.endsWith(".com") && !email.endsWith(".in"))) {
-      errorMsg.textContent = "⚠️ Invalid email. Must include '@' and end with '.com' or '.in'";
-      return;
-    }
+      if (!name || !email || !phone || !seats || !date || !roomType) {
+        errorMsg.textContent = "⚠️ Please fill in all the fields.";
+        return;
+      }
 
-    if (phone.length !== 10 || isNaN(phone)) {
-      errorMsg.textContent = "⚠️ Please enter a valid 10-digit phone number.";
-      return;
-    }
+      if (!email.includes("@") || (!email.endsWith(".com") && !email.endsWith(".in"))) {
+        errorMsg.textContent = "⚠️ Invalid email. Must include '@' and end with '.com' or '.in'";
+        return;
+      }
 
-  
+      if (phone.length !== 10 || isNaN(phone)) {
+        errorMsg.textContent = "⚠️ Please enter a valid 10-digit phone number.";
+        return;
+      }
 
-    // ✅ FormData ready to send (with ID)
-    const formData = new URLSearchParams({
-      id, // 👈 Send unique ID to Google Sheet
-      name,
-      email,
-      phone,
-      seats,
-      date,
-      roomType,
-      message,
-      page: "https://arbajcodes.github.io/Manushri-Girls-Hostel/booking-list.html"
-    });
-
-    try {
-      const res = await fetch("https://script.google.com/macros/s/AKfycbwKUashpRRiCZYsNkVaMbra6VOyRSNvHbMpKG7zL4WkrfosbvZ7py5lrBYF_Y4dnfdA/exec", {
-        method: "POST",
-        body: formData
+      const formData = new URLSearchParams({
+        id,
+        name,
+        email,
+        phone,
+        seats,
+        date,
+        roomType,
+        message,
+        page: "https://arbajcodes.github.io/Manushri-Girls-Hostel/booking-list.html"
       });
 
-      const result = await res.text();
-      console.log("Response from Google Script:", result);
+      try {
+        const res = await fetch("https://script.google.com/macros/s/AKfycbwKUashpRRiCZYsNkVaMbra6VOyRSNvHbMpKG7zL4WkrfosbvZ7py5lrBYF_Y4dnfdA/exec", {
+          method: "POST",
+          body: formData
+        });
 
-      alert("✅ Thank you! We will contact you soon.");
-      form.reset();
-      errorMsg.textContent = ""; // clear error
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("❌ Error! Please try again later.");
-    }
-  });
-</script>
+        const result = await res.text();
+        alert("✅ Thank you! We will contact you soon.");
+        form.reset();
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("❌ Error! Please try again later.");
+      }
+    });
+  </script>
 
 </body>
-
 </html>
