@@ -2,25 +2,38 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us - Manushri Girls Hostel</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-
   <style>
     body {
       margin: 0;
+      padding: 0;
+      overflow-x: hidden;
       font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background-color: #f9fafb;
     }
 
+
     .hero {
-      background: url('your-hostel-image.jpg') center/cover no-repeat;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://plus.unsplash.com/premium_photo-1733306455377-2ef61e873f69?q=80&w=1920') center center / cover no-repeat;
       color: white;
       text-align: center;
       padding: 100px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+      box-sizing: border-box;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
     }
 
     .hero h1 {
@@ -33,19 +46,13 @@
       opacity: 0.9;
     }
 
-    .about-content,
-    .why-choose,
-    .features,
-    .gallery-preview,
-    .cta-section {
+    section {
       max-width: 1200px;
       margin: auto;
       padding: 60px 20px;
     }
 
-    .about-content h2,
-    .why-choose h2,
-    .gallery-preview h2 {
+    section h2 {
       text-align: center;
       color: #1e3a8a;
       margin-bottom: 30px;
@@ -58,70 +65,31 @@
       margin: auto;
     }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .feature-card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      flex: 1 1 200px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .feature-card h3 {
-      margin: 10px 0 5px;
-    }
-
-    /* --- NEW Why Choose Cards --- */
+    .features,
     .why-choose-cards {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 20px;
-    }
-
-    .why-card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 20px;
-      flex: 1 1 250px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease;
-      display: flex;
-      align-items: center;
       justify-content: center;
       text-align: center;
+    }
+
+    .feature-card,
+    .why-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      flex: 1 1 240px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
       min-height: 130px;
     }
 
+    .feature-card:hover,
     .why-card:hover {
       transform: translateY(-5px);
     }
 
-    .why-card p {
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .center-card {
-      align-items: center;
-    }
-
-    .kitchen-card {
-      background-color: #fefce8;
-      /* light yellow background */
-      border: 1px solid #facc15;
-      /* yellow border */
-    }
-
-
-    /* Gallery */
     .gallery-preview img {
       width: 100%;
       max-width: 300px;
@@ -129,76 +97,80 @@
       margin: 10px;
     }
 
-    /* Visit Button */
-   .schedule-visit-wrapper {
-  text-align: center;
-  margin-top: 30px;
-}
+    .schedule-visit-wrapper {
+      text-align: center;
+      margin-top: 30px;
+    }
 
-.visit-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #25D366;
-  color: white;
-  padding: 14px 26px;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+    .visit-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 26px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-.visit-button:hover {
-  background-color: #1ebe5d;
-  transform: scale(1.05);
-}
+    .visit-button:hover {
+      background-color: #1ebe5d;
+      transform: scale(1.05);
+    }
 
-.whatsapp-icon {
-  width: 24px;
-  height: 24px;
-}
+    .reply-note {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+      font-style: italic;
+    }
 
-.reply-note {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
-  font-style: italic;
-}
+    .kitchen-card {
+      background-color: #fefce8;
+      border: 1px solid #facc15;
+    }
 
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 
 <body>
+
   <header>
-    <!-- header-section -->
     <div class="logo-title">
       <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Logo">
       </a>
-
-      <h1>Mansuri Girl's Hostel</h1>
+      <h1>Manushri Girl's Hostel</h1>
     </div>
-
     <button class="menu-toggle" id="menuToggle">&#9776;</button>
-    <nav>
+    <nav id="navbar">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="rooms.html">Rooms</a>
       <a href="gallery.html">Gallery</a>
-       <a href="booking.html">booking</a>
-      <a href="login.html">Student/Parent Login</a>
+      <a href="booking.html">Booking</a>
+      <a href="Ruls&FaQ.html">Rules</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h1>Welcome to Manushri Girls Hostel</h1>
     <p>Comfort. Safety. Community.</p>
   </section>
 
-  <!-- About Section -->
   <section class="about-content">
     <h2>About Us</h2>
     <p>Manushri Girls Hostel was established in 2023 to provide a safe, comfortable, and friendly living environment for
@@ -206,7 +178,6 @@
       amenities and a true feeling of home.</p>
   </section>
 
-  <!-- Features Section -->
   <section class="features">
     <div class="feature-card" data-aos="fade-up">
       <h3>✅ Safe & Secure</h3>
@@ -226,7 +197,6 @@
     </div>
   </section>
 
-  <!-- why-choose-section  -->
   <section class="why-choose">
     <h2>Why Choose Us?</h2>
     <div class="why-choose-cards">
@@ -242,58 +212,43 @@
       <div class="why-card" data-aos="zoom-in" data-aos-delay="300">
         <p>WiFi, laundry, and study area available</p>
       </div>
-      <div class="why-card center-card" data-aos="zoom-in" data-aos-delay="400">
+      <div class="why-card" data-aos="zoom-in" data-aos-delay="400">
         <p>Emergency support & medical assistance</p>
       </div>
-      <!-- Kitchen Card -->
       <div class="why-card kitchen-card" data-aos="zoom-in" data-aos-delay="500">
-        <p>🧑‍🍳 Fully equipped kitchen available for light cooking.<br>
-          Includes induction, fridge, utensils, RO water.</p>
+        <p>🧑‍🍳 Fully equipped kitchen with induction, fridge, utensils, RO water</p>
       </div>
     </div>
   </section>
 
-
-  <!-- Gallery -->
   <section class="gallery-preview">
     <h2>Gallery Preview</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <img
-        src="https://plus.unsplash.com/premium_photo-1724061885068-f10ceeb9f84c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Room Photo" data-aos="fade-up">
-      <img
-        src="https://images.unsplash.com/photo-1638828229405-8db92ff35af6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Common Area" data-aos="fade-up" data-aos-delay="100">
-      <img
-        src="https://images.unsplash.com/photo-1672477179695-7276b0602fa9?q=80&w=726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Meals" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://plus.unsplash.com/premium_photo-1724061885068-f10ceeb9f84c?q=80&w=870" alt="Room"
+        data-aos="fade-up">
+      <img src="https://images.unsplash.com/photo-1638828229405-8db92ff35af6?q=80&w=870" alt="Common Area"
+        data-aos="fade-up" data-aos-delay="100">
+      <img src="https://images.unsplash.com/photo-1672477179695-7276b0602fa9?q=80&w=726" alt="Meals" data-aos="fade-up"
+        data-aos-delay="200">
     </div>
   </section>
 
-  <!-- Call To Action -->
-<div class="schedule-visit-wrapper">
-  <a href="https://wa.me/919587120014?text=Hi%20I%20would%20like%20to%20schedule%20a%20visit%20to%20Manushri%20Girls%20Hostel."
-     target="_blank"
-     class="visit-button">
-    <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon" />
-    Schedule a Visit
-  </a>
-  <p class="reply-note">We reply within 2 hours</p>
-</div>
+  <div class="schedule-visit-wrapper">
+    <a href="https://wa.me/919587120014?text=Hi%20I%20would%20like%20to%20schedule%20a%20visit%20to%20Manushri%20Girls%20Hostel."
+      target="_blank" class="visit-button">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" alt="WhatsApp Icon" />
+      Schedule a Visit
+    </a>
+    <p class="reply-note">We reply within 2 hours</p>
+  </div>
 
-
-  <!--JS-Section -->
-
-  <!-- AOS CSS (already added in <head>) -->
-  <!-- AOS JS -->
+  <!-- AOS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init({
-        duration: 1000,
-        // once: true
-      });
-    });
+    AOS.init({ duration: 1000 });
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+    menuToggle.addEventListener('click', () => navbar.classList.toggle('open'));
   </script>
 
 </body>
