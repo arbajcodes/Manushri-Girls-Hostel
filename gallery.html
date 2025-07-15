@@ -17,45 +17,45 @@
     }
 
     /* galler-front-section   */
-   .fullscreen-video-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
+    .fullscreen-video-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-}
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
 
-.video-background iframe {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  pointer-events: none; /* to prevent user interaction */
-}
+    .video-background iframe {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.video-overlay-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-  padding-top: 40vh;
-}
+    .video-overlay-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+      padding-top: 40vh;
+    }
 
-.video-overlay-content h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
+    .video-overlay-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
 
-.video-overlay-content p {
-  font-size: 20px;
-}
+    .video-overlay-content p {
+      font-size: 20px;
+    }
 
 
     .filter-buttons {
@@ -89,8 +89,15 @@
     }
 
     .gallery-item {
-      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
+
+    .gallery-item.active {
+      display: block;
+      opacity: 1;
+    }
+
 
     .gallery-item img {
       width: 100%;
@@ -103,9 +110,6 @@
       transform: scale(1.05);
     }
 
-    .gallery-item.active {
-      display: block;
-    }
 
     /* Common styles for both room & gallery descriptions */
     .gallery-description {
@@ -162,32 +166,29 @@
     </div>
 
     <button class="menu-toggle" id="menuToggle">&#9776;</button>
-    <nav>
+    <nav id="navbar">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="rooms.html">Rooms</a>
       <a href="gallery.html">Gallery</a>
-       <a href="booking.html">booking</a>
-      <a href="login.html">Student/Parent Login</a>
+      <a href="booking.html">booking</a>
+      <a href="Ruls&FaQ.html">Ruls</a>
     </nav>
   </header>
 
+
   <!-- gallery-header  -->
-<section class="fullscreen-video-section">
-  <div class="video-background">
-    <iframe
-      src="https://www.youtube.com/embed/Lw4bdGfoKHo?autoplay=1&mute=1&controls=0&loop=1&playlist=Lw4bdGfoKHo&modestbranding=1&showinfo=0"
-      title="Manushri Girls Hostel Tour"
-      frameborder="0"
-      allow="autoplay; fullscreen"
-      allowfullscreen
-    ></iframe>
-  </div>
-  <div class="video-overlay-content">
-    <h1>Our Hostel Gallery</h1>
-    <p>Take a visual tour of Manushri Girls Hostel</p>
-  </div>
-</section>
+  <section class="fullscreen-video-section">
+    <div class="video-background">
+      <iframe
+        src="https://www.youtube.com/embed/Lw4bdGfoKHo?autoplay=1&mute=1&controls=0&loop=1&playlist=Lw4bdGfoKHo&modestbranding=1&showinfo=0"
+        title="Manushri Girls Hostel Tour" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <div class="video-overlay-content">
+      <h1>Our Hostel Gallery</h1>
+      <p>Take a visual tour of Manushri Girls Hostel</p>
+    </div>
+  </section>
 
 
   <div class="filter-buttons">
@@ -240,8 +241,12 @@
       </a>
     </div>
     <div class="gallery-item room active">
-      <img src="https://images.pexels.com/photos/5999352/pexels-photo-5999352.jpeg" alt="Bathroom">
+      <a href="https://images.pexels.com/photos/5999352/pexels-photo-5999352.jpeg" data-lightbox="gallery"
+        data-title="Bathroom">
+        <img src="https://images.pexels.com/photos/5999352/pexels-photo-5999352.jpeg" alt="Bathroom">
+      </a>
     </div>
+
   </section>
 
   <!-- gallery-description -->
@@ -266,6 +271,15 @@
     integrity="sha512-qpxgSSUKkTS2jEprTLnyY7ffzmER1o3m+1MCx5JwJG2RpTtykgNqQK9VaUsCJvUZZLZyL6YAc1Fx8+goI+7CZA=="
     crossorigin="anonymous"></script>
   <script>
+    //--header-nav-toggle--//
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('open');
+    });
+
+    //gallery-section
     function filterGallery(category) {
       const buttons = document.querySelectorAll('.filter-buttons button');
       buttons.forEach(btn => btn.classList.remove('active'));
