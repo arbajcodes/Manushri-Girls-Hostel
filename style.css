@@ -1,3 +1,7 @@
+ html {
+   scroll-behavior: smooth;
+ }
+
  :root {
    --primary-color: #0f172a;
    --accent-color: #38bdf8;
@@ -23,7 +27,7 @@
  header {
    background-color: var(--primary-color);
    color: white;
-   padding: 15px 20px;
+   padding: 15px 30px;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -310,59 +314,6 @@
    transition-delay: 0.6s;
  }
 
- /*----------------------------------------loginform--------------------------------------------------------------------*/
-/* Modal (popup) login */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-  background-color: white;
-  margin: 10% auto;
-  padding: 30px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  position: relative;
-}
-
-.modal-content form input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.modal-content form button {
-  width: 100%;
-  padding: 10px;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.modal-content form button:hover {
-  background-color: #334155;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
  /*---------------------------------------about-section-----------------------------------------------------------------*/
  #about {
    padding: 60px 20px;
@@ -398,10 +349,11 @@
    border-radius: 8px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
    overflow: hidden;
-   transition: transform 0.3s ease ;
+   transition: transform 0.3s ease;
  }
- .room-card:hover{
-  transform: scale(1.05);
+
+ .room-card:hover {
+   transform: scale(1.05);
  }
 
  .room-card img {
@@ -718,45 +670,55 @@
    font-size: 16px;
  }
 
-.popup-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-}
+ .popup-overlay {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   z-index: 9999;
+   justify-content: center;
+   align-items: center;
+ }
 
-.popup-box {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  animation: popupFade 0.3s ease;
-  width: 90%;
-  max-width: 400px;
-}
+ .popup-box {
+   background: white;
+   padding: 30px;
+   border-radius: 12px;
+   text-align: center;
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+   animation: popupFade 0.3s ease;
+   width: 90%;
+   max-width: 400px;
+ }
 
-.popup-box h2 {
-  color: green;
-  margin-bottom: 10px;
-}
+ .popup-box h2 {
+   color: green;
+   margin-bottom: 10px;
+ }
 
-.close-btn {
-  position: absolute;
-  top: 15px; right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-  color: red;
-}
+ .close-btn {
+   position: absolute;
+   top: 15px;
+   right: 20px;
+   font-size: 24px;
+   cursor: pointer;
+   color: red;
+ }
 
-@keyframes popupFade {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
+ @keyframes popupFade {
+   from {
+     transform: scale(0.7);
+     opacity: 0;
+   }
+
+   to {
+     transform: scale(1);
+     opacity: 1;
+   }
+ }
 
 
 
@@ -804,11 +766,11 @@
    }
 
    .tagline-section h1 {
-     font-size: 36px;
+     font-size: 28px;
    }
 
    .tagline-section h2 {
-     font-size: 22px;
+     font-size: 18px;
    }
 
    .cta-button {
