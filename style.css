@@ -4,10 +4,12 @@
 
  :root {
    --primary-color: #0f172a31;
-   --accent-color: #38bdf8;
-   --text-color: #333;
-   --bg-color: #f4f4f4;
-   --button-hover: #0ea5e9;
+   --accent-color: #f97316;
+   --text-color: #7e5029b8;
+   --bg-color: #161616;
+   --button-color:#e66911;
+   --button-hover: #7e5029b8;
+   --btn-padding: 10px 20px;
  }
 
  * {
@@ -27,7 +29,7 @@
  header {
    background-color: var(--primary-color);
    color: white;
-   padding: 15px 30px;
+   padding: 11px 25px;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -46,7 +48,7 @@
  .logo-link img {
    width: 50px;
    height: 50px;
-   /* border-radius: 50%; */
+
    transition: transform 0.2s ease;
  }
 
@@ -56,23 +58,25 @@
 
  .logo-title h1 {
    font-size: 20px;
-   margin: 0;
+   margin-top: -7px;
    font-weight: 600;
+   color: #ccc;
  }
 
  nav {
    display: flex;
    gap: 15px;
+   margin-top: -4px
  }
 
  nav a {
-   color: white;
+   color: var(--accent-color);
    text-decoration: none;
    font-weight: 500;
  }
 
  nav a:hover {
-   color: var(--accent-color);
+   color: var(--text-color);
    transform: scale(1.05);
  }
 
@@ -109,7 +113,7 @@
  }
 
  .hero button {
-   background-color: var(--accent-color);
+   background-color: var(--button-color);
    color: white;
    border: none;
    padding: 10px 20px;
@@ -214,11 +218,12 @@
  /* Tagline Section */
  .tagline-section {
    position: relative;
-   background: url('https://images.unsplash.com/photo-1571712707792-82c3cc4243f5?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+   background: url('https://images.unsplash.com/photo-1520277739336-7bf67edfa768?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
    padding: 100px 20px;
    text-align: center;
    color: white;
    overflow: hidden;
+   margin-top: 32px;
  }
 
  .tagline-section::before {
@@ -268,9 +273,9 @@
 
  /* Button */
  .cta-button {
-   background-color: #38bdf8;
+   background-color: var(--button-color);
    color: white;
-   padding: 14px 30px;
+   padding: var(--btn-padding);
    font-size: 18px;
    border: none;
    border-radius: 6px;
@@ -280,7 +285,7 @@
  }
 
  .cta-button:hover {
-   background-color: #0ea5e9;
+   background-color: var(--button-hover);
    transform: scale(1.05);
  }
 
@@ -307,11 +312,11 @@
  }
 
  .delay-1 {
-   transition-delay: 0.3s;
+   transition-delay: 0.2s;
  }
 
  .delay-2 {
-   transition-delay: 0.6s;
+   transition-delay: 0.2s;
  }
 
  /*---------------------------------------about-section-----------------------------------------------------------------*/
@@ -321,7 +326,7 @@
 
  .section-title {
    font-size: 32px;
-   color: var(--primary-color);
+   color: var(--accent-color);
    margin-bottom: 20px;
    text-align: center;
  }
@@ -329,6 +334,7 @@
  .about p {
    max-width: 800px;
    margin: auto;
+   color: var(--text-color);
    line-height: 1.7;
  }
 
@@ -345,7 +351,7 @@
 
  .room-card {
    flex: 1 1 300px;
-   background: white;
+   background: var(--bg-color);
    border-radius: 8px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
    overflow: hidden;
@@ -354,6 +360,7 @@
 
  .room-card:hover {
    transform: scale(1.05);
+   box-shadow: 0 2px 8px var(--accent-color);
  }
 
  .room-card img {
@@ -368,13 +375,17 @@
 
  .room-card h3 {
    margin-bottom: 10px;
-   color: var(--primary-color);
+   color: var(--accent-color);
+ }
+
+ .room-card p {
+   color: var(--text-color);
  }
 
  /*--gallery-section--*/
  .section-title2 {
    font-size: 32px;
-   color: var(--primary-color);
+   color: var(--accent-color);
    margin-bottom: 20px;
    margin-top: 20px;
    text-align: center;
@@ -386,7 +397,7 @@
    position: relative;
    overflow: hidden;
    border-radius: 10px;
-   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 5px 12px var(--text-color);
    z-index: 1;
 
  }
@@ -414,7 +425,7 @@
    transform: translateY(-50%);
    font-size: 32px;
    background-color: rgba(0, 0, 0, 0.4);
-   color: white;
+   color: var(--button-color);
    border: none;
    cursor: pointer;
    padding: 8px 12px;
@@ -437,18 +448,18 @@
  /*--video-section--*/
  .video-section iframe {
    width: 100%;
-   max-width: 1400px;
+   max-width: 1250px;
    height: 450px;
    border: none;
    border-radius: 10px;
-   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+   box-shadow: 0 4px 16px var(--text-color);
    margin-top: 20px;
  }
 
  /* review-section  */
  .review-section {
    padding: 60px 20px;
-   background-color: white;
+   background-color: var(--bg-color);
    border-top: 8px solid var(--accent-color);
    text-align: center;
  }
@@ -468,7 +479,8 @@
  .review-card {
    min-width: 100%;
    padding: 20px;
-   background-color: #f0f9ff;
+   background-color: var(--bg-color);
+   color: #f9f9f9;
    margin: 10px;
    border-radius: 10px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -508,50 +520,54 @@
  .review-form input {
    padding: 10px;
    border-radius: 6px;
-   border: 1px solid #ccc;
+   border: 1px solid #cccccc38;
+   background-color: var(--bg-color)
  }
 
  .review-form button {
-   background-color: var(--accent-color);
+   background-color: var(--button-color);
    border: none;
    padding: 10px;
    color: white;
    cursor: pointer;
+   border-radius: 6px;
  }
 
  /*------contact+ Amenities List+Google Map Embed+footer------*/
  /* map  */
  .location-section {
    padding: 60px 20px;
-   background-color: #f9f9f9;
+   background-color: var(--bg-color);
    text-align: center;
  }
 
  .location-section .section-title {
    font-size: 32px;
-   color: var(--primary-color);
+   color: var(--accent-color);
    margin-bottom: 20px;
  }
+
 
  .location-wrapper {
    max-width: 1200px;
    margin: auto;
    border-radius: 10px;
    overflow: hidden;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
- }
-
- .location-wrapper iframe {
-   width: 100%;
-   height: 450px;
-   border: none;
+   box-shadow: 0 4px 12px var(--text-color);
+  }
+  
+  .location-wrapper iframe {
+    width: 100%;
+    height: 450px;
+    filter: grayscale(1) invert(1) contrast(1.2);
+    border: none;
    display: block;
  }
 
  /* our-amenites */
  .amenities-section {
    padding: 60px 20px;
-   background-color: #fff;
+   background-color: var(--bg-color);
    text-align: center;
  }
 
@@ -566,7 +582,7 @@
  }
 
  .amenity-card {
-   background: #f9f9f9;
+   background: var(--bg-color);
    border-radius: 10px;
    padding: 20px 15px;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -574,6 +590,7 @@
  }
 
  .amenity-card:hover {
+   background: var(--accent-color);
    transform: scale(1.05);
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
  }
@@ -603,13 +620,13 @@
  .amenity-card p {
    font-size: 14px;
    font-weight: 500;
-   color: var(--primary-color);
+   color: var(--text-color);
  }
 
  /* contact-Us  */
  .contact-section {
    padding: 60px 20px;
-   background-color: #fff;
+   background-color: var(--bg-color);
  }
 
  .contact-wrapper {
@@ -631,7 +648,9 @@
  #contactForm input,
  #contactForm textarea {
    padding: 12px 15px;
-   border: 1px solid #ccc;
+   border: 1px solid #cccccc31;
+   background-color: var(--bg-color);
+   color: #ccc;
    border-radius: 6px;
    font-size: 16px;
    font-family: 'Poppins', sans-serif;
@@ -640,7 +659,7 @@
  #contactForm button {
    padding: 12px 20px;
    border: none;
-   background-color: var(--accent-color);
+   background-color: var(--button-color);
    color: white;
    font-size: 16px;
    border-radius: 5px;
@@ -654,7 +673,7 @@
 
  .owner-details {
    flex: 1 1 300px;
-   background-color: var(--primary-color);
+   background-color: var(--bg-color);
    color: white;
    padding: 20px;
    border-radius: 8px;
@@ -663,11 +682,13 @@
  .owner-details h3 {
    margin-bottom: 15px;
    font-size: 22px;
+   color: var(--accent-color);
  }
 
  .owner-details p {
    margin-bottom: 10px;
    font-size: 16px;
+   color: #ccc;
  }
 
  .popup-overlay {
@@ -724,7 +745,7 @@
 
  /* Footer */
  footer.footer {
-   background-color: var(--primary-color);
+   background-color: var(--text-color);
    color: white;
    text-align: center;
    padding: 20px;
@@ -757,6 +778,9 @@
      margin: 10px 0;
    }
 
+   .hero{
+    padding: 4px;
+   }
    .hero h2 {
      font-size: 28px;
    }
@@ -781,11 +805,22 @@
    .section-title {
      font-size: 24px;
    }
-
+     #gallery{
+      padding: 15px;
+     }
+   .rooms{
+    margin-top: 25px;
+   }
    .room-list {
      flex-direction: column;
      align-items: center;
+     padding: 20px;
+     margin: 2px;
    }
+   .room-card .content {
+   padding: 0px;
+   margin: 2px;
+ }
 
    .location-section .section-title {
      font-size: 24px;
