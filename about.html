@@ -8,6 +8,17 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <style>
+    :root {
+      --primary-color: #0f172a31;
+      --accent-color: #f97316;
+      --text-color: #7e5029;
+      --bg-color: #161616;
+      --button-color: #e66911;
+      --button-hover: #7e5029b8;
+      --white: #ccc;
+      --btn-padding: 10px 20px;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -15,25 +26,35 @@
       font-family: 'Poppins', sans-serif;
     }
 
-
+    /* Hero - section tag se alag override */
     .hero {
-      width: 100vw;
-      height: 100vh;
-      background: url('https://plus.unsplash.com/premium_photo-1733306455377-2ef61e873f69?q=80&w=1920') center center / cover no-repeat;
+      position: relative;
       color: white;
-      text-align: center;
-      padding: 100px 20px;
+      width: 100%;
+      height: 100vh;
+      max-width: 100% !important;
+      /* section wali max-width override */
+      margin: 0 !important;
+      padding: 0 !important;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 0;
-      position: relative;
-      left: 50%;
-      right: 50%;
-      transform: translateX(-50%);
-      box-sizing: border-box;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      text-shadow: 1px 1px 4px #000;
+      overflow: hidden;
+    }
+
+    /* Video background */
+    .hero-video {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
 
     .hero h1 {
@@ -54,7 +75,7 @@
 
     section h2 {
       text-align: center;
-      color: #1e3a8a;
+      color: var(--accent-color);
       margin-bottom: 30px;
     }
 
@@ -76,18 +97,31 @@
 
     .feature-card,
     .why-card {
-      background: white;
+      background: var(--bg-color);
+      color: #ccc;
       border-radius: 8px;
       padding: 20px;
       flex: 1 1 240px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgb(0, 0, 0);
       transition: transform 0.3s ease;
       min-height: 130px;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 10px;
+      color: var(--accent-color);
+    }
+
+    .feature-card,
+    .why-card h3 {
+      color: var(--white);
     }
 
     .feature-card:hover,
     .why-card:hover {
       transform: translateY(-5px);
+      background: var(--bg-color);
+      box-shadow: 0 4px 12px var(--text-color);
     }
 
     .gallery-preview img {
@@ -106,7 +140,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background-color: #25D366;
+      background-color: var(--button-color);
       color: white;
       padding: 14px 26px;
       font-size: 18px;
@@ -118,7 +152,7 @@
     }
 
     .visit-button:hover {
-      background-color: #1ebe5d;
+      background-color: var(--button-hover);
       transform: scale(1.05);
     }
 
@@ -130,8 +164,14 @@
     }
 
     .kitchen-card {
-      background-color: #fefce8;
-      border: 1px solid #facc15;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+
+    }
+
+    .kitchen-card:hover {
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
     @media (max-width: 768px) {
@@ -151,7 +191,14 @@
   <header>
     <div class="logo-title">
       <a href="index.html" class="logo-link">
-        <img src="images/logo.png" alt="Logo">
+        <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,12 88,40 12,40" fill="#f97316" opacity="0.95" />
+          <rect x="20" y="40" width="60" height="48" rx="3" fill="#f97316" opacity="0.15" />
+          <rect x="30" y="52" width="14" height="14" rx="2" fill="#f97316" opacity="0.9" />
+          <rect x="56" y="52" width="14" height="14" rx="2" fill="#f97316" opacity="0.9" />
+          <rect x="40" y="58" width="20" height="30" rx="2" fill="#f97316" opacity="0.95" />
+          <rect x="18" y="87" width="64" height="3" rx="1" fill="#f97316" opacity="0.4" />
+        </svg>
       </a>
       <h1>Manushri Girl's Hostel</h1>
     </div>
@@ -166,10 +213,14 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <!-- section ki jagah div use kiya — section CSS interfere nahi karega -->
+  <div class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="video/HostelReview.mp4" type="video/mp4">
+    </video>
     <h1>Welcome to Manushri Girls Hostel</h1>
     <p>Comfort. Safety. Community.</p>
-  </section>
+  </div>
 
   <section class="about-content">
     <h2>About Us</h2>

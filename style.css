@@ -5,9 +5,9 @@
  :root {
    --primary-color: #0f172a31;
    --accent-color: #f97316;
-   --text-color: #7e5029b8;
+   --text-color: #7e5029;
    --bg-color: #161616;
-   --button-color:#e66911;
+   --button-color: #e66911;
    --button-hover: #7e5029b8;
    --btn-padding: 10px 20px;
  }
@@ -42,31 +42,29 @@
  .logo-title {
    display: flex;
    align-items: center;
-   /* gap: 10px; */
  }
 
- .logo-link img {
+ .logo-link svg {
    width: 50px;
    height: 50px;
-
    transition: transform 0.2s ease;
  }
 
- .logo-link img:hover {
+ .logo-link svg:hover {
    transform: scale(1.05);
  }
 
  .logo-title h1 {
    font-size: 20px;
-   margin-top: -7px;
+   
    font-weight: 600;
-   color: #ccc;
+   color: var(--accent-color);
  }
 
  nav {
    display: flex;
    gap: 15px;
-   margin-top: -4px
+   /* margin-top: -4px */
  }
 
  nav a {
@@ -91,15 +89,32 @@
 
  /* Hero Section */
  .hero {
-   background: url('https://plus.unsplash.com/premium_photo-1733306455377-2ef61e873f69?q=80&w=827&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center/cover;
+   position: relative;
+   /* video ko andar rakhne ke liye */
    color: white;
-   height: calc(100vh - 100px);
+   height: 100vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    text-align: center;
    text-shadow: 1px 1px 4px #000;
+   overflow: hidden;
+   /* video bahar na jaye */
+ }
+
+ /* Video background */
+ .hero-video {
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   /* screen ko cover kare */
+   z-index: -1;
+   /* content ke peeche rahega */
  }
 
  .hero h2 {
@@ -334,11 +349,15 @@
  .about p {
    max-width: 800px;
    margin: auto;
+   font-size: 13px;
    color: var(--text-color);
    line-height: 1.7;
  }
 
  /* --room-section-- */
+ .rooms {
+   margin-top: 35px;
+ }
 
  .room-list {
    max-width: 1000px;
@@ -469,6 +488,7 @@
    margin: auto;
    position: relative;
    overflow: hidden;
+   text-align: center;
  }
 
  .review-track {
@@ -481,7 +501,7 @@
    padding: 20px;
    background-color: var(--bg-color);
    color: #f9f9f9;
-   margin: 10px;
+   margin: auto;
    border-radius: 10px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
  }
@@ -501,10 +521,12 @@
 
  .review-btn.left {
    left: 20px;
+   color: var(--accent-color);
  }
 
  .review-btn.right {
    right: 10px;
+   color: var(--accent-color);
  }
 
  .review-form {
@@ -516,11 +538,20 @@
    margin-inline: auto;
  }
 
+ .review-text {
+   color: #ccc;
+ }
+
+ .review-author {
+   color: var(--accent-color);
+ }
+
  .review-form textarea,
  .review-form input {
    padding: 10px;
    border-radius: 6px;
    border: 1px solid #cccccc38;
+   color: white;
    background-color: var(--bg-color)
  }
 
@@ -554,13 +585,13 @@
    border-radius: 10px;
    overflow: hidden;
    box-shadow: 0 4px 12px var(--text-color);
-  }
-  
-  .location-wrapper iframe {
-    width: 100%;
-    height: 450px;
-    filter: grayscale(1) invert(1) contrast(1.2);
-    border: none;
+ }
+
+ .location-wrapper iframe {
+   width: 100%;
+   height: 450px;
+   filter: grayscale(1) invert(1) contrast(1.2);
+   border: none;
    display: block;
  }
 
@@ -586,13 +617,14 @@
    border-radius: 10px;
    padding: 20px 15px;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+   box-shadow: 0 2px 8px var(--button-hover);
  }
 
  .amenity-card:hover {
    background: var(--accent-color);
    transform: scale(1.05);
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+   box-shadow: 0 2px 8px var(--button-hover);
+   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
  }
 
  .amenity-card img {
@@ -778,9 +810,10 @@
      margin: 10px 0;
    }
 
-   .hero{
-    padding: 4px;
+   .hero {
+     padding: 4px;
    }
+
    .hero h2 {
      font-size: 28px;
    }
@@ -805,22 +838,26 @@
    .section-title {
      font-size: 24px;
    }
-     #gallery{
-      padding: 15px;
-     }
-   .rooms{
-    margin-top: 25px;
+
+   #gallery {
+     padding: 15px;
    }
+
+   .rooms {
+     margin-top: 25px;
+   }
+
    .room-list {
      flex-direction: column;
      align-items: center;
      padding: 20px;
      margin: 2px;
    }
+
    .room-card .content {
-   padding: 0px;
-   margin: 2px;
- }
+     padding: 0px;
+     margin: 2px;
+   }
 
    .location-section .section-title {
      font-size: 24px;

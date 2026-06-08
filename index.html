@@ -25,13 +25,19 @@
 <body>
     <!-- header-section  -->
     <header>
-        <div class="logo-title">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="Logo">
-            </a>
-
-            <h1>Manushri Girl's Hostel</h1>
-        </div>
+    <div class="logo-title">
+  <a href="index.html" class="logo-link">
+    <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,12 88,40 12,40" fill="#f97316" opacity="0.95"/>
+      <rect x="20" y="40" width="60" height="48" rx="3" fill="#f97316" opacity="0.15"/>
+      <rect x="30" y="52" width="14" height="14" rx="2" fill="#f97316" opacity="0.9"/>
+      <rect x="56" y="52" width="14" height="14" rx="2" fill="#f97316" opacity="0.9"/>
+      <rect x="40" y="58" width="20" height="30" rx="2" fill="#f97316" opacity="0.95"/>
+      <rect x="18" y="87" width="64" height="3" rx="1" fill="#f97316" opacity="0.4"/>
+    </svg>
+  </a>
+  <h1>Manushri Girl's Hostel</h1>
+</div>
 
         <button class="menu-toggle" id="menuToggle">&#9776;</button>
 
@@ -47,6 +53,12 @@
 
     <!-- Hero Section -->
     <section class="hero">
+
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="video/HostelReview.mp4" type="video/mp4">
+        </video>
+
+        <!-- video-end -->
         <h2>Welcome to Manushri Girls Hostel</h2>
         <p>Comfortable, Safe, and Affordable Living for Students</p>
         <a href="gallery.html">
@@ -108,7 +120,7 @@
     <section id="rooms" class="rooms">
         <h2 class="section-title">Room Types</h2>
         <div class="room-list">
-            <div class="room-card room-card1">
+            <div class="room-card room-card1" data-aos="fade-up" data-aos-delay="100">
                 <img src="https://www.shutterstock.com/image-photo/hostel-dormitory-beds-arranged-room-260nw-696168130.jpg"
                     alt="Single Room">
                 <div class="content">
@@ -117,7 +129,7 @@
                     <p>Private room with attached washroom, perfect for focused study and privacy.</p>
                 </div>
             </div>
-            <div class="room-card room-card2">
+            <div class="room-card room-card2" data-aos="fade-up" data-aos-delay="100">
                 <img src="https://static.vecteezy.com/system/resources/thumbnails/032/712/575/small_2x/simple-and-bright-room-for-two-students-in-a-student-dormitory-ai-generative-photo.jpg"
                     alt="Double Room">
                 <div class="content">
@@ -126,7 +138,7 @@
                     <p>Comfortable shared room for two with study desks, beds, and storage space.</p>
                 </div>
             </div>
-            <div class="room-card room-card3">
+            <div class="room-card room-card3" data-aos="fade-up" data-aos-delay="100">
                 <img src="https://doonpublicschool.in/content/hostel.JPG" alt="Dormitory Room">
                 <div class="content">
                     <h3>Dormitory</h3>
@@ -165,8 +177,8 @@
         <div class="review-slider">
             <div class="review-track" id="reviewTrack">
                 <div class="review-card">
-                    <p class="review-text">"Amazing place to stay!"</p>
-                    <p class="review-author">– Simran, NEET Aspirant</p>
+                    <p class="review-text" style="color: #ccc;">"Amazing place to stay!"</p>
+                    <p class="review-author" style="color: var(--accent-color);">– Simran, NEET Aspirant</p>
                 </div>
                 <div class="review-card">
                     <p class="review-text">"Clean rooms and healthy food."</p>

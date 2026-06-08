@@ -79,13 +79,14 @@ function handleReviewSubmit(e) {
   const name = e.target.querySelector("input").value;
 
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-
+   
   // ✅ Add new review to end
   reviews.push({ text, name });
 
   // ✅ Limit to last 5
   if (reviews.length > maxReviews) {
     reviews = reviews.slice(-maxReviews);
+
   }
 
   // ✅ Save to localStorage
@@ -101,7 +102,7 @@ function renderReviews(reviews) {
     const card = document.createElement("div");
     card.classList.add("review-card");
     card.innerHTML = `
-        <p class="review-text">"${r.text}"</p>
+        <p class="review-text" >"${r.text}"</p>
         <p class="review-author">– ${r.name}</p>`;
     reviewTrack.appendChild(card);
   });
