@@ -9,6 +9,7 @@
    --bg-color: #161616;
    --button-color: #e66911;
    --button-hover: #7e5029b8;
+   --white-color:#CCCCCC;
    --btn-padding: 10px 20px;
  }
 
@@ -28,7 +29,7 @@
 
  header {
    background-color: var(--primary-color);
-   color: white;
+   /* color: white; */
    padding: 11px 25px;
    display: flex;
    justify-content: space-between;
@@ -64,7 +65,7 @@
  nav {
    display: flex;
    gap: 15px;
-   /* margin-top: -4px */
+   
  }
 
  nav a {
@@ -77,22 +78,24 @@
    color: var(--text-color);
    transform: scale(1.05);
  }
-
- .menu-toggle {
-   display: none;
-   font-size: 26px;
-   background: none;
-   border: none;
-   color: white;
-   cursor: pointer;
- }
+/* //side-baar start------------------------------- */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+/* //side-baar end------------------------------- */
 
  /* Hero Section */
  .hero {
    position: relative;
+   margin-top: -75px;
    /* video ko andar rakhne ke liye */
-   color: white;
-   height: 100vh;
+   color: var(--white-color);
+   height: 110vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -120,11 +123,13 @@
  .hero h2 {
    font-size: 30px;
    margin-bottom: 10px;
- }
-
- .hero p {
-   font-size: 20px;
-   margin-bottom: 20px;
+   color: var(--accent-color);
+  }
+  
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--white-color);
  }
 
  .hero button {
@@ -613,18 +618,18 @@
  }
 
  .amenity-card {
-   background: var(--bg-color);
+   background: var(--button-color);
    border-radius: 10px;
    padding: 20px 15px;
    transition: transform 0.3s ease, box-shadow 0.3s ease;
-   box-shadow: 0 2px 8px var(--button-hover);
+   /* box-shadow: 0 2px 8px var(--button-hover); */
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
  }
 
  .amenity-card:hover {
    background: var(--accent-color);
    transform: scale(1.05);
    box-shadow: 0 2px 8px var(--button-hover);
-   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
  }
 
  .amenity-card img {

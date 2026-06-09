@@ -7,6 +7,17 @@
   <title>Rules & FAQs - Manushri Girls Hostel</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    :root {
+      --primary-color: #0f172a31;
+      --accent-color: #f97316;
+      --text-color: #7e5029;
+      --bg-color: #161616;
+      --button-color: #e66911;
+      --button-hover: #7e5029b8;
+      --white-color: #ccc;
+      --btn-padding: 10px 20px;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: #161616;
@@ -15,12 +26,12 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      color: #ccc;
+      color: var(--white-color);
     }
 
     header {
       background-color: #161616;
-      color: white;
+      color: var(--white-color);
       padding: 30px 20px;
       text-align: center;
     }
@@ -45,22 +56,25 @@
     }
 
     .faq-item {
-      margin-bottom: 18px;
-      background: #fff;
+      margin-bottom: 25px;
+      
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05); */
+      box-shadow: 0 3px 10px var(--button-color);
     }
-
+    
     .faq-question {
       cursor: pointer;
       padding: 15px 20px;
       background-color: #7e5029;
+      color: #000000;
       font-weight: 600;
       transition: background 0.3s;
     }
 
     .faq-question:hover {
+      color: #000000;
       background-color: #7e5029;
     }
 
@@ -69,6 +83,7 @@
       overflow: hidden;
       transition: max-height 0.4s ease, padding 0.4s ease;
       padding: 0 20px;
+      color: #000000bd;
       background-color: #7e5029;
     }
 
@@ -86,8 +101,8 @@
     }
 
     .back-btn {
-      background-color: #1e3a8a;
-      color: white;
+      background-color: var(--button-color);
+      color: var(--bg-color);
       padding: 10px 20px;
       border-radius: 6px;
       text-decoration: none;
@@ -99,7 +114,8 @@
     }
 
     .back-btn:hover {
-      background-color: #3749a4;
+      background-color: var(--button-hover);
+      color: var(--white-color);
     }
 
     @media (max-width: 600px) {
@@ -133,52 +149,62 @@
     <!-- FAQ ITEMS START -->
     <div class="faq-item">
       <div class="faq-question">🕒 What are the check-in and check-out timings?</div>
-      <div class="faq-answer">Check-in is at 12:00 PM and check-out is at 11:00 AM. Early check-in or late check-out is subject to availability.</div>
+      <div class="faq-answer">Check-in is at 12:00 PM and check-out is at 11:00 AM. Early check-in or late check-out is
+        subject to availability.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">🏠 What types of rooms are available?</div>
-      <div class="faq-answer">We offer Single, Double, and Triple Sharing rooms. All rooms are fully furnished with a fan, bed, cupboard, and power outlet.</div>
+      <div class="faq-answer">We offer Single, Double, and Triple Sharing rooms. All rooms are fully furnished with a
+        fan, bed, cupboard, and power outlet.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">🍽️ Is food provided in the hostel?</div>
-      <div class="faq-answer">Currently, we do not provide meals. However, food delivery is allowed and a shared kitchen is available for reheating meals.</div>
+      <div class="faq-answer">Currently, we do not provide meals. However, food delivery is allowed and a shared kitchen
+        is available for reheating meals.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">🔒 Are there any curfew timings?</div>
-      <div class="faq-answer">Yes, the main gate closes at 10:30 PM. Please inform the warden in advance if you plan to arrive late.</div>
+      <div class="faq-answer">Yes, the main gate closes at 10:30 PM. Please inform the warden in advance if you plan to
+        arrive late.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">📶 What facilities are included?</div>
-      <div class="faq-answer">Free WiFi, purified drinking water, 24/7 CCTV surveillance, laundry area, and shared bathrooms with hot water.</div>
+      <div class="faq-answer">Free WiFi, purified drinking water, 24/7 CCTV surveillance, laundry area, and shared
+        bathrooms with hot water.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">👪 Are visitors allowed?</div>
-      <div class="faq-answer">Visitors are allowed only in the common area and must leave by 8 PM. Overnight stays are not permitted.</div>
+      <div class="faq-answer">Visitors are allowed only in the common area and must leave by 8 PM. Overnight stays are
+        not permitted.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">🚫 Is smoking or alcohol allowed?</div>
-      <div class="faq-answer">No. Smoking, alcohol, and illegal activities are strictly prohibited on hostel premises.</div>
+      <div class="faq-answer">No. Smoking, alcohol, and illegal activities are strictly prohibited on hostel premises.
+      </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">💳 What is the payment procedure?</div>
-      <div class="faq-answer">A one-month advance rent is required to confirm your booking. Rent is paid monthly via UPI, bank transfer, or cash.</div>
+      <div class="faq-answer">A one-month advance rent is required to confirm your booking. Rent is paid monthly via
+        UPI, bank transfer, or cash.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">❌ What is the cancellation and refund policy?</div>
-      <div class="faq-answer">Cancellations 24 hours before check-in are fully refundable. Cancellations after that will incur a one-night deduction.</div>
+      <div class="faq-answer">Cancellations 24 hours before check-in are fully refundable. Cancellations after that will
+        incur a one-night deduction.</div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">📦 What should I carry when moving in?</div>
-      <div class="faq-answer">Please bring your ID proof, bed sheet, blanket, and toiletries. Basic furniture is provided.</div>
+      <div class="faq-answer">Please bring your ID proof, bed sheet, blanket, and toiletries. Basic furniture is
+        provided.</div>
     </div>
     <!-- FAQ ITEMS END -->
   </main>
